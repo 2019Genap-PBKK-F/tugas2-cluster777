@@ -91,7 +91,7 @@ app.put('api/mahasiswa/update/:id', function (req, res) {
     });
   });
 //listen for request on port 3000, and as a callback function have the port listened on logged
-app.listen(port, hostname, function () {
+app.listen(port,  function () {
   var message = "Server runnning on Port: " + port;
   console.log(message);
 });
