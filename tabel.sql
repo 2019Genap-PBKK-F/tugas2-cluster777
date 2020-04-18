@@ -39,8 +39,9 @@ last_update datetime
 
 
 create table Indikator_Periode(
-id_master int unique,
-id_periode int unique,
+id int identity(1,1) primary key,
+id_master int ,
+id_periode int ,
 bobot float,
 constraint fk_master foreign key(id_master)
 	references MasterIndikator(id),
@@ -76,18 +77,15 @@ constraint fk_datadasar foreign key(id_datadasar)
 )
 
 create table Indikator_SatuanKerja(
-id_periode int unique,
-id_master integer unique,
-id_satker varchar(32) unique,
+id int identity(1,1) primary key,
+id_indikator_periode int,
+id_satker varchar(32),
 bobot float,
 target float,
 capaian float,
 last_update datetime,
-constraint fk_periode1 foreign key (id_periode) 
-	references Indikator_Periode(id_periode)
-	, 
-constraint fk_master1 foreign key (id_master) 
-	references Indikator_Periode(id_master)
+constraint fk_periode1 foreign key (id_indikator_periode) 
+	references Indikator_Periode(id)
 	,
 constraint fk_satker1 foreign key (id_satker) 
 	references SatuanKerja(id_satker)
@@ -95,18 +93,9 @@ constraint fk_satker1 foreign key (id_satker)
 )
 
 create table Indikator_SatuanKerja_Log(
-id_periode int,
-id_master integer,
-id_satker varchar(32),
+id_indikator_satker int,
 capaian float,
 create_date datetime,
-constraint fk_periode2 foreign key (id_periode) 
-	references Indikator_SatuanKerja(id_periode)
-	, 
-constraint fk_master2 foreign key (id_master) 
-	references Indikator_SatuanKerja(id_master)
-	,
-constraint fk_satker2 foreign key (id_satker) 
-	references Indikator_SatuanKerja(id_satker)
-	
+constraint fk_indikator_satker foreign key (id_indikator_satker) 
+	references Indikator_SatuanKerja(id)
 )

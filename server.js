@@ -3,7 +3,7 @@
 const express = require("express");
 const app = express();
 const sql = require('mssql')
-//hostname='127.0.0.1'
+// hostname='127.0.0.1'
 const port = 8009;
 const hostname = '10.199.14.46';
 
@@ -62,149 +62,244 @@ app.get("/",function(req, res)
   // res.end('45 Butuh Pelukan');
   res.sendFile(__dirname + '/index.html')
 });
-
-app.get("/api/mahasiswa/", function(req, res)
-{
-  var query = "select * from mahasiswa";
-  executeQuery(res, query, null, 0);
-});
-
-app.get("/api/mahasiswa/:id", function(req, res)
-{
-  var query = "select * from mahasiswa where id =" + req.params.id;
-  executeQuery(res, query, null, 0);
-});
-
-app.get("/api/gender/", function(req, res)
-{
-  var query = "select * from gender";
-  executeQuery(res, query, null, 0)
-})
-
-app.get("/api/data-dasar/", function(req, res)
+// datadasar
+app.get("/api/DataDasar/", function(req, res)
 {
     var query = "select * from DataDasar"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/data-dasar/nama", function(req, res)
-{
-  var query = 'select id,nama as name from DataDasar'
-  executeQuery(res, query, null, 0);
-})
-
-app.get("/api/data-dasar/:id",function(req, res)
+app.get("/api/DataDasar/:id", function(req, res)
 {
     var query = "select * from DataDasar where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
-
-app.get("/api/unit/", function(req, res)
+// jenis satker
+app.get("/api/JenisSatker/", function(req, res)
 {
-    var query = "select * from Unit"
+    var query = "select * from JenisSatker"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/unit/:id", function(req, res)
+app.get("/api/JenisSatker/:id", function(req, res)
 {
-    var query = "select * from Unit where id=" + req.params.id;
+    var query = "select * from JenisSatker where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// master indikator
+app.get("/api/MasterIndikator/", function(req, res)
+{
+    var query = "select * from MasterIndikator"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/nama-unit", function(req, res)
+app.get("/api/MasterIndikator/:id", function(req, res)
 {
-  var query = "select id, nama as name from Unit";
-  executeQuery(res, query, null, 0);
-})
-
-app.get("/api/kategori/", function(req, res)
+    var query = "select * from MasterIndikator where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// periode
+app.get("/api/Periode/", function(req, res)
 {
-    var query = "select id,nama as name from KategoriUnit"
+    var query = "select * from Periode"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/kategori/:id", function(req, res)
+app.get("/api/Periode/:id", function(req, res)
 {
-    var query = "select * from KategoriUnit where id=" + req.params.id;
+    var query = "select * from Periode where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// indikator periode
+app.get("/api/Indikator_Periode/", function(req, res)
+{
+    var query = "select * from Indikator_Periode"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/capaian-unit/",function(req, res)
+app.get("/api/Indikator_Periode/:id", function(req, res)
+{
+    var query = "select * from Indikator_Periode where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// satker
+app.get("/api/SatuanKerja/", function(req, res)
+{
+    var query = "select * from SatuanKerja"
+    executeQuery(res, query, null, 0);
+});
+
+app.get("/api/SatuanKerja/:id", function(req, res)
+{
+    var query = "select * from SatuanKerja where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// Capaian_Unit
+app.get("/api/Capaian_Unit/", function(req, res)
 {
     var query = "select * from Capaian_Unit"
     executeQuery(res, query, null, 0);
 });
 
-app.get("/api/capaian-unit/:DataDasar_id&:Unit_id",function(req, res)
+app.get("/api/Capaian_Unit/:id_satker&:id_datadasar", function(req, res)
 {
-    var query = "select * from Capaian_Unit where DataDasar_id =" + req.params.DataDasar_id + 'and Unit_id =' + req.params.Unit_id;  
+    var query = "select * from Capaian_Unit where id_satker=" + req.params.id_satker +" id_datadasar="+req.params.id_datadasar;
+    executeQuery(res, query, null, 0);
+});
+// Indikator_SatuanKerja
+app.get("/api/Indikator_SatuanKerja/", function(req, res)
+{
+    var query = "select * from Indikator_SatuanKerja"
     executeQuery(res, query, null, 0);
 });
 
-// POST FUNCTION
-
-app.post("/api/mahasiswa/", function(req, res)
+app.get("/api/Indikator_SatuanKerja/:id", function(req, res)
 {
-  var model = [
-    { name: 'nrp', sqltype: sql.Char, value: req.body.nrp },
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
-    { name: 'angkatan', sqltype: sql.Char, value: req.body.angkatan },
-    { name: 'jk', sqltype: sql.VarChar, value: req.body.jk },
-    { name: 'lahir', sqltype: sql.Char, value: req.body.lahir },
-    { name: 'ukt', sqltype: sql.VarChar, value: req.body.ukt },
-    { name: 'foto', sqltype: sql.VarChar, value: req.body.foto },
-    { name: 'aktif', sqltype: sql.Bit, value: req.body.aktif}
-  ]
+    var query = "select * from Indikator_SatuanKerja where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// Indikator_SatuanKerja
+app.get("/api/Indikator_SatuanKerja_Log/", function(req, res)
+{
+    var query = "select * from Indikator_SatuanKerja_Log"
+    executeQuery(res, query, null, 0);
+});
 
-  var query = 'insert into mahasiswa ( nrp, nama, angkatan, jk, lahir, ukt, foto, aktif ) values( @nrp, @nama, @angkatan, @jk, @lahir, @ukt, @foto, @aktif)';
-  executeQuery(res, query, model, 1)
-})
-
-app.post("/api/data-dasar/", function(req, res)
+app.get("/api/Indikator_SatuanKerja_Log/:id", function(req, res)
+{
+    var query = "select * from Indikator_SatuanKerja_Log where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// POST FUNCTION
+// DataDasar
+app.post("/api/DataDasar/", function(req, res)
 {
   var model = [
     { name: 'id', sqltype: sql.Int, value: req.body.id },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }    
   ]
 
-  var query = 'insert into DataDasar ( nama ) values( @nama )';
+  var query = 'insert into DataDasar ( nama, create_date, last_update, expired_date ) values( @nama, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
 })
-
-app.post("/api/unit/", function(req, res)
+// JenisSatker
+app.post("/api/JenisSatker/", function(req, res)
 {
   var model = [
-    { name: 'KategoriUnit_id', sqltype: sql.Int, value: req.body.KategoriUnit_id },
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama}     
   ]
 
-  var query = 'insert into Unit ( KategoriUnit_id, nama ) values( @KategoriUnit_id, @nama )';
+  var query = 'insert into JenisSatker ( id, nama, create_date, last_update, expired_date ) values( @id, @nama , CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
 })
-
-app.post("/api/kategori/", function( req, res)
+// MasterIndikator
+app.post("/api/MasterIndikator/", function( req, res)
 {
   var model = [
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_pembilang', sqltype: sql.Int, value: req.body.id_pembilang },
+    { name: 'id_penyebut', sqltype: sql.Int, value: req.body.id_penyebut },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'deskripsi', sqltype: sql.VarChar, value: req.body.deskripsi },
+    { name: 'default_bobot', sqltype: sql.Int, value: req.body.default_bobot },
   ]
-  var query = 'insert into KategoriUnit( Nama ) values( @nama )';
+  var query = 'insert into MasterIndikator( id_pembilang, id_penyebut, nama, deskripsi, default_bobot, create_date, last_update, expired_date ) values( @id_pembilang, @id_penyebut, @nama, @deskripsi, @default_bobot, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
 })
-
-app.post("/api/capaian-unit/", function(req, res)
+// Periode
+app.post("/api/Periode/", function(req, res)
 {
   var model = [
-    { name: 'DataDasar_id', sqltype: sql.Int, value: req.body.DataDasar_id },
-    { name: 'Unit_id', sqltype: sql.Int, value: req.body.Unit_id },
-    // { name: 'waktu', sqltype: sql.DateTime, value: req.body.waktu },
-    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian }
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama}  
   ]
 
   // console.log(req.body.waktu)
 
-  var query = 'insert into Capaian_Unit values( @DataDasar_id, @Unit_id, CURRENT_TIMESTAMP, @capaian )';
+  var query = 'insert into Periode( id, nama, create_date, last_update ) values( @id, @nama , CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
 })
+// indikator periode
+app.post("/api/Indikator_Periode/", function(req, res)
+{
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_master', sqltype: sql.Int, value: req.body.id_master },
+    { name: 'id_periode', sqltype: sql.Int, value: req.body.id_periode },
+    { name: 'bobot', sqltype: sql.Float, value: req.body.bobot}  
+  ]
+
+  // console.log(req.body.waktu)
+
+  var query = 'insert into Indikator_Periode( id_master, id_periode, bobot ) values( @id_master, @id_periode, @bobot )';
+  executeQuery(res, query, model, 1)
+})
+// satker
+app.post("/api/SatuanKerja/", function(req, res)
+{
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_ins_satker', sqltype: sql.Int, value: req.body.id_ins_satker },
+    { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama},
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email}
+    
+  ]
+
+  // console.log(req.body.waktu)
+
+  var query = 'insert into SatuanKerja( id_ins_satker, id_induk_satker, nama, email ) values( @id_ins_satker, @id_induk_satker, @nama, @email )';
+  executeQuery(res, query, model, 1)
+})
+// Capaian_Unit
+app.post("/api/Capaian_Unit/", function(req, res)
+{
+  var model = [
+    { name: 'id_satker', sqltype: sql.VarChar, value: req.body.id_satker },
+    { name: 'id_datadasar', sqltype: sql.Int, value: req.body.id_datadasar },
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+    
+  ]
+
+  // console.log(req.body.waktu)
+
+  var query = 'insert into Capaian_Unit( id_satker, id_datadasar, waktu, capaian) values( @id_satker, @id_datadasar, CURRENT_TIMESTAMP, @capaian )';
+  executeQuery(res, query, model, 1)
+})
+// Indikator_SatuanKerja
+app.post("/api/Indikator_SatuanKerja/", function(req, res)
+{
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_indikator_periode', sqltype: sql.Int, value: req.body.id_indikator_periode },
+    { name: 'id_satker', sqltype: sql.VarChar, value: req.body.id_satker },
+    { name: 'bobot', sqltype: sql.Float, value: req.body.bobot},
+    { name: 'target', sqltype: sql.Float, value: req.body.target},
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+    
+  ]
+
+  // console.log(req.body.waktu)
+
+  var query = 'insert into Indikator_SatuanKerja( id_indikator_periode, id_satker, bobot, target, capaian, last_update) values( @id_indikator_periode, @id_satker, @bobot, target, @capaian, CURRENT_TIMESTAMP )';
+  executeQuery(res, query, model, 1)
+})
+// Indikator_SatuanKerja_Log
+app.post("/api/Indikator_SatuanKerja_Log/", function(req, res)
+{
+  var model = [
+    { name: 'id_indikator_satker', sqltype: sql.Int, value: req.body.id_indikator_satker },
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+    
+  ]
+
+  // console.log(req.body.waktu)
+
+  var query = 'insert into Indikator_SatuanKerja_Log( id_indikator_satker, capaian, create_date) values( @id_indikator_satker, @capaian, CURRENT_TIMESTAMP )';
+  executeQuery(res, query, model, 1)
+})
+
 
 // PUT FUNCTION
 
@@ -224,81 +319,176 @@ app.put('/api/mahasiswa/:id',function(req, res ) {
   var query = "update mahasiswa set nama = @nama, nrp = @nrp, angkatan = @angkatan, jk = @jk, lahir = @lahir, ukt = @ukt, foto = @foto, aktif = @aktif WHERE id = @id";
   executeQuery(res, query, model, 1);
 });
-
-app.put("/api/data-dasar/:id", function(req, res) {
+// Data Dasar
+app.put("/api/DataDasar/:id", function(req, res) {
   var model = [
     { name: 'id', sqltype: sql.Int, value: req.body.id },
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
-  ]
-
-  var query = 'update DataDasar set nama = @nama where id = @id';
-  executeQuery(res, query, model, 1)
-})
-
-app.put("/api/unit/:id", function(req, res) {
-  var model = [
-    { name: 'id', sqltype: sql.Int, value: req.body.id },
-    { name: 'KategoriUnit_id', sqltype: sql.Int, value: req.body.KategoriUnit_id },
-    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
-  ]
-
-  var query = 'update Unit set KategoriUnit_id = @KategoriUnit_id, nama = @nama where id = @id';
-  executeQuery(res, query, model, 1)
-})
-
-app.post("/api/kategori/:id", function( req, res)
-{
-  var model = [
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
   ]
-  var query = 'update KategoriUnit set nama = @nama where id=' + req.params.id;
+
+  var query = 'update DataDasar set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
-
-app.put("/api/capaian-unit/:DataDasar_id&:Unit_id", function(req, res) {
+// JenisSatker
+app.put("/api/JenisSatker/:id", function(req, res) {
   var model = [
-    { name: 'DataDasar_id_new', sqltype: sql.Int, value: req.body.DataDasar_id },
-    { name: 'Unit_id_new', sqltype: sql.Int, value: req.body.Unit_id },
-    { name: 'waktu', sqltype: sql.DateTime, value: req.body.waktu },
-    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian }
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
   ]
 
-  var query = 'update Capaian_Unit set DataDasar_id = @DataDasar_id_new, Unit_id = @Unit_id_new, waktu = CURRENT_TIMESTAMP, capaian = @capaian where DataDasar_id = ' + req.params.DataDasar_id + ' and Unit_id =' + req.params.Unit_id;
+  var query = 'update JenisSatker set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
+// MasterIndikator
+app.put("/api/MasterIndikator/:id", function(req, res) {
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_pembilang', sqltype: sql.Int, value: req.body.id_pembilang },
+    { name: 'id_penyebut', sqltype: sql.Int, value: req.body.id_penyebut },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'deskripsi', sqltype: sql.VarChar, value: req.body.deskripsi },
+    { name: 'default_bobot', sqltype: sql.Int, value: req.body.default_bobot }
+  ]
 
+  var query = 'update MasterIndikator set id_pembilang = @id_pembilang id_penyebut=@id_penyebut nama = @nama deskripsi=@deskripsi default_bobot=@default_bobot where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// Periode
+app.put("/api/Periode/:id", function(req, res) {
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
+  ]
+
+  var query = 'update Periode set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// Indikator_Periode
+app.put("/api/Indikator_Periode/:id", function(req, res) {
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_master', sqltype: sql.Int, value: req.body.id_master },
+    { name: 'id_periode', sqltype: sql.Int, value: req.body.id_periode },
+    { name: 'bobot', sqltype: sql.Float, value: req.body.bobot} 
+  ]
+
+  var query = 'update Indikator_Periode set id_master = @id_master id_periode=@id_periode bobot=@bobot where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// satker
+app.put("/api/SatuanKerja/:id", function(req, res) {
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_ins_satker', sqltype: sql.Int, value: req.body.id_ins_satker },
+    { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
+    { name: 'nama', sqltype: sql.VarChar, value: req.body.nama},
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email} 
+  ]
+
+  var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker id_induk_satker=@id_induk_satker nama=@nama email=@email last_update=CURRENT_TIMESTAMP where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// Capaian_Unit
+app.put("/api/Capaian_Unit/:id", function(req, res) {
+  var model = [
+    { name: 'id_satker', sqltype: sql.VarChar, value: req.body.id_satker },
+    { name: 'id_datadasar', sqltype: sql.Int, value: req.body.id_datadasar },
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+    
+  ]
+
+  var query = 'update Capaian_Unit set id_satker = @id_satker id_datadasar=@id_datadasar capaian=@capaian where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// Indikator_SatuanKerja
+app.put("/api/Indikator_SatuanKerja/:id", function(req, res) {
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_indikator_periode', sqltype: sql.Int, value: req.body.id_indikator_periode },
+    { name: 'id_satker', sqltype: sql.VarChar, value: req.body.id_satker },
+    { name: 'bobot', sqltype: sql.Float, value: req.body.bobot},
+    { name: 'target', sqltype: sql.Float, value: req.body.target},
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+    
+  ]
+
+  var query = 'update Indikator_SatuanKerja set id_indikator_periode = @id_indikator_periode id_satker=@id_satker bobot=@bobot target=@target capaian=@capaian where id = @id';
+  executeQuery(res, query, model, 1)
+})
+// Indikator_SatuanKerja_Log
+app.put("/api/Indikator_SatuanKerja_Log/:id", function(req, res) {
+  var model = [
+    { name: 'id_indikator_satker', sqltype: sql.Int, value: req.body.id_indikator_satker },
+    { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
+  ]
+
+  var query = 'update Indikator_SatuanKerja_Log set id_indikator_periode = @id_indikator_periode id_satker=@id_satker bobot=@bobot target=@target capaian=@capaian where id = @id';
+  executeQuery(res, query, model, 1)
+})
 // DELETE FUNCTION
+// datadasar
 
-app.delete("/api/mahasiswa/:id", function(req, res)
+app.delete("/api/DataDasar/:id", function(req, res)
 {
-  var query = "delete from mahasiswa where id=" + req.params.id;
-  executeQuery(res, query, null, 0);
-})
+    var query = "delete * from DataDasar where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// jenis satker
 
-app.delete("/api/data-dasar/:id", function(req, res)
+app.delete("/api/JenisSatker/:id", function(req, res)
 {
-  var query = "delete from DataDasar where id=" + req.params.id;
-  executeQuery(res, query, null, 0);
-})
+    var query = "delete  from JenisSatker where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// master indikator
 
-app.delete("/api/unit/:id", function(req, res)
+app.delete("/api/MasterIndikator/:id", function(req, res)
 {
-  var query = "delete from Unit where id=" + req.params.id;
-  executeQuery(res, query, null, 0);
-})
+    var query = "delete from MasterIndikator where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// periode
 
-app.delete("/api/kategori/:id", function(req, res)
+app.delete("/api/Periode/:id", function(req, res)
 {
-  var query = "delete from KategoriUnit where id=" + req.params.id;
-  executeQuery(res, query, null, 0);
-})
+    var query = "delete  from Periode where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// indikator periode
 
-app.delete("/api/capaian-unit/:DataDasar_id&:Unit_id", function(req, res)
+app.delete("/api/Indikator_Periode/:id", function(req, res)
 {
-  var query = "delete from Capaian_Unit where DataDasar_id=" + req.params.DataDasar_id + 'and Unit_id =' + req.params.Unit_id;
-  executeQuery(res, query, null, 0);
-})
+    var query = "delete from Indikator_Periode where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// satker
 
+app.delete("/api/SatuanKerja/:id", function(req, res)
+{
+    var query = "delete from SatuanKerja where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// Capaian_Unit
+
+app.delete("/api/Capaian_Unit/:id_satker&:id_datadasar", function(req, res)
+{
+    var query = "delete from Capaian_Unit where id_satker=" + req.params.id_satker +" id_datadasar="+req.params.id_datadasar;
+    executeQuery(res, query, null, 0);
+});
+// Indikator_SatuanKerja
+
+app.delete("/api/Indikator_SatuanKerja/:id", function(req, res)
+{
+    var query = "delete from Indikator_SatuanKerja where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// Indikator_SatuanKerja
+
+app.delete("/api/Indikator_SatuanKerja_Log/:id_indikator_satker", function(req, res)
+{
+    var query = "delete from Indikator_SatuanKerja_Log where id_indikator_satker=" + req.params.id_indikator_satker;
+    executeQuery(res, query, null, 0);
+});
 //  LISTEN
 
 app.listen(port, hostname, function () {
