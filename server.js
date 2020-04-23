@@ -74,6 +74,18 @@ app.get("/api/DataDasar/:id", function(req, res)
     var query = "select * from DataDasar where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
+// aspek
+app.get("/api/Aspek/", function(req, res)
+{
+    var query = "select * from Aspek"
+    executeQuery(res, query, null, 0);
+});
+
+app.get("/api/Aspek/:id", function(req, res)
+{
+    var query = "select * from Aspek where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
 // jenis satker
 app.get("/api/JenisSatker/", function(req, res)
 {
