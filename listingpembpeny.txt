@@ -1,100 +1,100 @@
 pembilang------------------------
-insert into datadasar(id,nama)(0,"Pembilang")
-insert into datadasar(id,nama)(1,"Penyebut")
-insert into datadasar(id,nama)(2,"Jumlah prodi terakreditasi internasional")
-insert into datadasar(id,nama)(3,"-")
-insert into datadasar(id,nama)(4,"Jumlah Penelitian dengan Mitra dari PT Luar Negeri")
-insert into datadasar(id,nama)(5,"Jumlah Dosen")
-insert into datadasar(id,nama)(6,"Jumlah Penelitian Kerjasama Internasional")
-insert into datadasar(id,nama)(7,"Jumlah Program Studi Terakreditasi A")
-insert into datadasar(id,nama)(8,"Jumlah Program Studi")
-insert into datadasar(id,nama)(9,"Jumlah Publikasi di Jurnal Internasional Terindeks Scopus atau minimum setara")
-insert into datadasar(id,nama)(10,"Jumlah Publikasi di Jurnal Internasional Terindeks Scopus atau minimum setara sebagai penulis pertama atau corresponding author")
-insert into datadasar(id,nama)(11,"Jumlah Publikasi Internasional Terindeks Scopus atau minimum setara")
-insert into datadasar(id,nama)(12,"Jumlah Publikasi Internasional Terindeks Scopus kumulatif")
-insert into datadasar(id,nama)(13,"Jumlah Sitasi dari Publikasi Internasional Terindeks Scopus kumulatif")
-insert into datadasar(id,nama)(14,"Total Nilai H-index Scopus Dosen")
-insert into datadasar(id,nama)(15,"Jumlah kejuaraan ranking 1 di lomba tingkat nasional yang diraih Mahasiswa atau Tim Mahasiswa")
-insert into datadasar(id,nama)(16,"Jumlah Penghargaan diterima Dosen di kegiatan Berskala Nasional")
-insert into datadasar(id,nama)(17,"Jumlah tim ilmiah kemahasiswaan yang didanai dalam rangka PIMNAS")
-insert into datadasar(id,nama)(18," ")
-insert into datadasar(id,nama)(19,"Jumlah Judul Penelitian")
-insert into datadasar(id,nama)(20,"Jumlah judul penelitian yang Diketuai oleh Dosen")
-insert into datadasar(id,nama)(21,"jumlah lulusan Program S3 tepat waktu")
-insert into datadasar(id,nama)(22,"Jumlah lulusan Program S3")
-insert into datadasar(id,nama)(23,"Jumlah mahasiswa yang mendapatkan sertifikasi kompetensi")
-insert into datadasar(id,nama)(24,"Jumlah Mahasiswa")
-insert into datadasar(id,nama)(25,"Jumlah Publikasi Bersama (Co-Authorship) Internasional kumulatif")
-insert into datadasar(id,nama)(26,"mata kuliah daring synchronous (blended learning)")
-insert into datadasar(id,nama)(27,"jumlah lulusan Program S2 tepat waktu")
-insert into datadasar(id,nama)(28,"Jumlah lulusan Program S2")
-insert into datadasar(id,nama)(29,"Jumlah mahasiswa berwirausaha")
-insert into datadasar(id,nama)(30,"Jumlah Mahasiswa S1 atau D4")
-insert into datadasar(id,nama)(31,"jumlah lulusan Program S1 atau D4 tepat waktu")
-insert into datadasar(id,nama)(32,"Jumlah lulusan Program S1 atau D4")
-insert into datadasar(id,nama)(33,"Jumlah Paper di Jurnal Nasional Terakreditasi")
-insert into datadasar(id,nama)(34,"Jumlah Publikasi di Seminar Internasional Terindeks Scopus")
-insert into datadasar(id,nama)(35,"Jumlah lulusan yang langsung bekerja dalam jangka waktu 1 tahun setelah kelulusan")
-insert into datadasar(id,nama)(36,"Jumlah lulusan")
-insert into datadasar(id,nama)(37,"mata kuliah daring asynchronous (MOOC)")
-insert into datadasar(id,nama)(38,"Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Nasional (lomba kelompok)")
-insert into datadasar(id,nama)(39,"Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Nasional (lomba perseorangan)")
-insert into datadasar(id,nama)(40,"Jumlah kejuaraan di lomba tingkat internasional yang dijuarai Mahasiswa ITS")
-insert into datadasar(id,nama)(41,"Jumlah Dosen yang Diundang sebagai Invited atau Keynote Speaker di Seminar Internasional atau Narasumber")
-insert into datadasar(id,nama)(42,"Jumlah Dosen yang menjadi Editor publikasi Internasional terindeks global")
-insert into datadasar(id,nama)(43,"Jumlah Penghargaan diterima Dosen di kegiatan Berskala Internasional")
-insert into datadasar(id,nama)(44,"Jumlah mahasiswa inbound")
-insert into datadasar(id,nama)(45,"Jumlah Kegiatan Internasional yang Diselenggarakan (kuliah tamu, workshop dan seminar internasional)")
-insert into datadasar(id,nama)(46,"Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Internasional (lomba kelompok)")
-insert into datadasar(id,nama)(47,"Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Internasional (lomba perseorangan)")
-insert into datadasar(id,nama)(48,"Jumlah Dosen yang menjadi Reviewer publikasi Internasional terindeks global")
-insert into datadasar(id,nama)(49,"Jumlah mahasiswa outbound")
-insert into datadasar(id,nama)(50,"Jumlah Dosen yang menjadi Anggota Asosiasi Profesi Internasional")
-insert into datadasar(id,nama)(51,"Jumlah prodi yang menyelenggarakan Kelas Internasional")
-insert into datadasar(id,nama)(52,"Jumlah Temuan Irjen/BPK/KAI")
-insert into datadasar(id,nama)(53,"Jumlah Mahasiswa Pascasarjana")
-insert into datadasar(id,nama)(54,"Jumlah Visiting Professor,Lecturer,Researcher ke PTLN mitra")
-insert into datadasar(id,nama)(55,"Jumlah dosen memperoleh sertifikasi kompetensi/profesional nasional atau internasional")
-insert into datadasar(id,nama)(56,"Jumlah mahasiswa yang mengikuti kegiatan merdeka belajar")
-insert into datadasar(id,nama)(57,"Jumlah nama PTLN mitra yang mengisi kuesioner QS")
-insert into datadasar(id,nama)(58,"Jumlah Pendaftaran HKI atau Paten (nominal)")
-insert into datadasar(id,nama)(59,"Jumlah prodi yang menerapkan pembelajaran Kampus Merdeka")
-insert into datadasar(id,nama)(60,"Jumlah sertifikasi LBE (lab based education)")
-insert into datadasar(id,nama)(61,"Jumlah Mahasiswa S1 Baru Berbeasiswa Afirmasi (termasuk program bidik misi atau kartu indonesia pintar)")
-insert into datadasar(id,nama)(62,"Jumlah Mahasiswa Baru S1")
-insert into datadasar(id,nama)(63,"Jumlah Mahasiswa S3 yang teregistrasi")
-insert into datadasar(id,nama)(64,"Jumlah Revenue dari Mahasiswa (SPP)")
-insert into datadasar(id,nama)(65,"Jumlah Mahasiswa (Program Pasca Sarjana)")
-insert into datadasar(id,nama)(66,"Jumlah mahasiswa yang mengikuti program magang industri")
-insert into datadasar(id,nama)(67,"Jumlah layanan yang telah diintegrasikan dengan layanan ULT (Unit Layanan Terpadu)")
-insert into datadasar(id,nama)(68,"Jumlah Mahasiswa S2 yang teregistrasi")
-insert into datadasar(id,nama)(69,"Jumlah Visiting Professor/Lecturer/Researcher dari PTLN mitra")
-insert into datadasar(id,nama)(70,"Ketersediaan profil unit berupa PPT dan video (dalam bahasa Indonesia dan English)")
-insert into datadasar(id,nama)(71,"jumlah buku ber-ISBN dan dipasarkan kumulatif 3 tahun terakhir)")
-insert into datadasar(id,nama)(72,"Jumlah Revenue dari Mahasiswa (UKT, SPI, SPP)")
-insert into datadasar(id,nama)(73,"Tingkat Maturitas Penyelenggaraan Sistem Pengendalian Intern Pemerintah (SPIP)")
-insert into datadasar(id,nama)(74,"Jumlah kelas mata kuliah/praktikum yang dikelola atau dilayani oleh Laboratorium")
-insert into datadasar(id,nama)(75,"Jumlah Mahasiswa yang terlibat dalam penelitian Dosen")
-insert into datadasar(id,nama)(76,"Jumlah Prodi Baru")
-insert into datadasar(id,nama)(77,"Jumlah Departemen")
-insert into datadasar(id,nama)(78,"jumlah dosen yang mengalami kenaikan jabatan fungsional")
-insert into datadasar(id,nama)(79,"jumlah dosen (diluar gol IV-E)")
-insert into datadasar(id,nama)(80,"Jumlah Dosen yang Mulai Mengikuti Pendidikan S3 Pada Tahun Berjalan")
-insert into datadasar(id,nama)(81,"Jumlah Dosen Bergelar S2 non TB+IB")
-insert into datadasar(id,nama)(82,"Jumlah Dosen dalam Jabatan Lektor Kepala")
-insert into datadasar(id,nama)(83,"Jumlah Dosen dalam Jabatan Profesor")
-insert into datadasar(id,nama)(84,"Jumlah dosen yang memiliki pengalaman bekerja di industri atau lembaga profesi minimal 1 tahun dan/atau bekerja di luar negeri minimal 1 tahun")
-insert into datadasar(id,nama)(85,"Jumlah Dosen bergelar S3")
-insert into datadasar(id,nama)(86,"jumlah dosen PNS dan NON-PNS yang mendapatkan jabatan fungsional pertama")
-insert into datadasar(id,nama)(87,"jumlah dosen PNS dan NON-PNS yang belum punya jabatan fungsional")
-insert into datadasar(id,nama)(88,"Jumlah Dosen yang Mengikuti Pelatihan atau Workshop")
-insert into datadasar(id,nama)(89,"Jumlah Tenaga Kependidikan yang Mengikuti Pelatihan atau Workshop")
-insert into datadasar(id,nama)(90,"Jumlah Tenaga Kependidikan")
-insert into datadasar(id,nama)(91,"Rata-rata waktu dosen mendapatkan jabatan fungsional pertama")
-insert into datadasar(id,nama)(92,"Terlaksananya Indeks Kualitas Lingkungan dan K3L lebih dari 2")
-insert into datadasar(id,nama)(93,"Terlaksananya toilet bersih lebih dari 80% ")
-insert into datadasar(id,nama)(94,"Terlaksananya program 3 R Sampah (Reduce, Reuse, Recycle)")
-insert into datadasar(id,nama)(95,"Jumlah kegiatan pengabdian kepada masyarakat yang Diketuai Dosen Lab terkait")
-insert into datadasar(id,nama)(96,"Jumlah Kerjasama dengan Industri yang diketuai Dosen dari Lab terkait")
-insert into datadasar(id,nama)(97,"Nilai Kerjasama dengan Industri dengan kontrak atas nama ITS  (Rp juta)")
-insert into datadasar(id,nama)(98,"Jumlah mahasiswa yang terlibat dalam pengabdian Dosen")
+insert into datadasar(id,nama)values(0,'Pembilang');
+insert into datadasar(id,nama)values(1,'Penyebut');
+insert into datadasar(id,nama)values(2,'Jumlah prodi terakreditasi internasional');
+insert into datadasar(id,nama)values(3,'-');
+insert into datadasar(id,nama)values(4,'Jumlah Penelitian dengan Mitra dari PT Luar Negeri');
+insert into datadasar(id,nama)values(5,'Jumlah Dosen');
+insert into datadasar(id,nama)values(6,'Jumlah Penelitian Kerjasama Internasional');
+insert into datadasar(id,nama)values(7,'Jumlah Program Studi Terakreditasi A');
+insert into datadasar(id,nama)values(8,'Jumlah Program Studi');
+insert into datadasar(id,nama)values(9,'Jumlah Publikasi di Jurnal Internasional Terindeks Scopus atau minimum setara');
+insert into datadasar(id,nama)values(10,'Jumlah Publikasi di Jurnal Internasional Terindeks Scopus atau minimum setara sebagai penulis pertama atau corresponding author');
+insert into datadasar(id,nama)values(11,'Jumlah Publikasi Internasional Terindeks Scopus atau minimum setara');
+insert into datadasar(id,nama)values(12,'Jumlah Publikasi Internasional Terindeks Scopus kumulatif');
+insert into datadasar(id,nama)values(13,'Jumlah Sitasi dari Publikasi Internasional Terindeks Scopus kumulatif');
+insert into datadasar(id,nama)values(14,'Total Nilai H-index Scopus Dosen');
+insert into datadasar(id,nama)values(15,'Jumlah kejuaraan ranking 1 di lomba tingkat nasional yang diraih Mahasiswa atau Tim Mahasiswa');
+insert into datadasar(id,nama)values(16,'Jumlah Penghargaan diterima Dosen di kegiatan Berskala Nasional');
+insert into datadasar(id,nama)values(17,'Jumlah tim ilmiah kemahasiswaan yang didanai dalam rangka PIMNAS');
+insert into datadasar(id,nama)values(18,'');
+insert into datadasar(id,nama)values(19,'Jumlah Judul Penelitian');
+insert into datadasar(id,nama)values(20,'Jumlah judul penelitian yang Diketuai oleh Dosen');
+insert into datadasar(id,nama)values(21,'jumlah lulusan Program S3 tepat waktu');
+insert into datadasar(id,nama)values(22,'Jumlah lulusan Program S3');
+insert into datadasar(id,nama)values(23,'Jumlah mahasiswa yang mendapatkan sertifikasi kompetensi');
+insert into datadasar(id,nama)values(24,'Jumlah Mahasiswa');
+insert into datadasar(id,nama)values(25,'Jumlah Publikasi Bersama (Co-Authorship) Internasional kumulatif');
+insert into datadasar(id,nama)values(26,'mata kuliah daring synchronous (blended learning)');
+insert into datadasar(id,nama)values(27,'jumlah lulusan Program S2 tepat waktu');
+insert into datadasar(id,nama)values(28,'Jumlah lulusan Program S2');
+insert into datadasar(id,nama)values(29,'Jumlah mahasiswa berwirausaha');
+insert into datadasar(id,nama)values(30,'Jumlah Mahasiswa S1 atau D4');
+insert into datadasar(id,nama)values(31,'jumlah lulusan Program S1 atau D4 tepat waktu');
+insert into datadasar(id,nama)values(32,'Jumlah lulusan Program S1 atau D4');
+insert into datadasar(id,nama)values(33,'Jumlah Paper di Jurnal Nasional Terakreditasi');
+insert into datadasar(id,nama)values(34,'Jumlah Publikasi di Seminar Internasional Terindeks Scopus');
+insert into datadasar(id,nama)values(35,'Jumlah lulusan yang langsung bekerja dalam jangka waktu 1 tahun setelah kelulusan');
+insert into datadasar(id,nama)values(36,'Jumlah lulusan');
+insert into datadasar(id,nama)values(37,'mata kuliah daring asynchronous (MOOC)');
+insert into datadasar(id,nama)values(38,'Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Nasional (lomba kelompok)');
+insert into datadasar(id,nama)values(39,'Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Nasional (lomba perseorangan)');
+insert into datadasar(id,nama)values(40,'Jumlah kejuaraan di lomba tingkat internasional yang dijuarai Mahasiswa ITS');
+insert into datadasar(id,nama)values(41,'Jumlah Dosen yang Diundang sebagai Invited atau Keynote Speaker di Seminar Internasional atau Narasumber');
+insert into datadasar(id,nama)values(42,'Jumlah Dosen yang menjadi Editor publikasi Internasional terindeks global');
+insert into datadasar(id,nama)values(43,'Jumlah Penghargaan diterima Dosen di kegiatan Berskala Internasional');
+insert into datadasar(id,nama)values(44,'Jumlah mahasiswa inbound');
+insert into datadasar(id,nama)values(45,'Jumlah Kegiatan Internasional yang Diselenggarakan (kuliah tamu, workshop dan seminar internasional)');
+insert into datadasar(id,nama)values(46,'Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Internasional (lomba kelompok)');
+insert into datadasar(id,nama)values(47,'Jumlah mahasiswa yang berprestasi (Juara 1, 2, dan 3 ) ditingkat Internasional (lomba perseorangan)');
+insert into datadasar(id,nama)values(48,'Jumlah Dosen yang menjadi Reviewer publikasi Internasional terindeks global');
+insert into datadasar(id,nama)values(49,'Jumlah mahasiswa outbound');
+insert into datadasar(id,nama)values(50,'Jumlah Dosen yang menjadi Anggota Asosiasi Profesi Internasional');
+insert into datadasar(id,nama)values(51,'Jumlah prodi yang menyelenggarakan Kelas Internasional');
+insert into datadasar(id,nama)values(52,'Jumlah Temuan Irjen/BPK/KAI');
+insert into datadasar(id,nama)values(53,'Jumlah Mahasiswa Pascasarjana');
+insert into datadasar(id,nama)values(54,'Jumlah Visiting Professor,Lecturer,Researcher ke PTLN mitra');
+insert into datadasar(id,nama)values(55,'Jumlah dosen memperoleh sertifikasi kompetensi/profesional nasional atau internasional');
+insert into datadasar(id,nama)values(56,'Jumlah mahasiswa yang mengikuti kegiatan merdeka belajar');
+insert into datadasar(id,nama)values(57,'Jumlah nama PTLN mitra yang mengisi kuesioner QS');
+insert into datadasar(id,nama)values(58,'Jumlah Pendaftaran HKI atau Paten (nominal)');
+insert into datadasar(id,nama)values(59,'Jumlah prodi yang menerapkan pembelajaran Kampus Merdeka');
+insert into datadasar(id,nama)values(60,'Jumlah sertifikasi LBE (lab based education)');
+insert into datadasar(id,nama)values(61,'Jumlah Mahasiswa S1 Baru Berbeasiswa Afirmasi (termasuk program bidik misi atau kartu indonesia pintar)');
+insert into datadasar(id,nama)values(62,'Jumlah Mahasiswa Baru S1');
+insert into datadasar(id,nama)values(63,'Jumlah Mahasiswa S3 yang teregistrasi');
+insert into datadasar(id,nama)values(64,'Jumlah Revenue dari Mahasiswa (SPP)');
+insert into datadasar(id,nama)values(65,'Jumlah Mahasiswa (Program Pasca Sarjana)');
+insert into datadasar(id,nama)values(66,'Jumlah mahasiswa yang mengikuti program magang industri');
+insert into datadasar(id,nama)values(67,'Jumlah layanan yang telah diintegrasikan dengan layanan ULT (Unit Layanan Terpadu)');
+insert into datadasar(id,nama)values(68,'Jumlah Mahasiswa S2 yang teregistrasi');
+insert into datadasar(id,nama)values(69,'Jumlah Visiting Professor/Lecturer/Researcher dari PTLN mitra');
+insert into datadasar(id,nama)values(70,'Ketersediaan profil unit berupa PPT dan video (dalam bahasa Indonesia dan English)');
+insert into datadasar(id,nama)values(71,'jumlah buku ber-ISBN dan dipasarkan kumulatif 3 tahun terakhir)');
+insert into datadasar(id,nama)values(72,'Jumlah Revenue dari Mahasiswa (UKT, SPI, SPP)');
+insert into datadasar(id,nama)values(73,'Tingkat Maturitas Penyelenggaraan Sistem Pengendalian Intern Pemerintah (SPIP)');
+insert into datadasar(id,nama)values(74,'Jumlah kelas mata kuliah/praktikum yang dikelola atau dilayani oleh Laboratorium');
+insert into datadasar(id,nama)values(75,'Jumlah Mahasiswa yang terlibat dalam penelitian Dosen');
+insert into datadasar(id,nama)values(76,'Jumlah Prodi Baru');
+insert into datadasar(id,nama)values(77,'Jumlah Departemen');
+insert into datadasar(id,nama)values(78,'jumlah dosen yang mengalami kenaikan jabatan fungsional');
+insert into datadasar(id,nama)values(79,'jumlah dosen (diluar gol IV-E)');
+insert into datadasar(id,nama)values(80,'Jumlah Dosen yang Mulai Mengikuti Pendidikan S3 Pada Tahun Berjalan');
+insert into datadasar(id,nama)values(81,'Jumlah Dosen Bergelar S2 non TB+IB');
+insert into datadasar(id,nama)values(82,'Jumlah Dosen dalam Jabatan Lektor Kepala');
+insert into datadasar(id,nama)values(83,'Jumlah Dosen dalam Jabatan Profesor');
+insert into datadasar(id,nama)values(84,'Jumlah dosen yang memiliki pengalaman bekerja di industri atau lembaga profesi minimal 1 tahun dan/atau bekerja di luar negeri minimal 1 tahun');
+insert into datadasar(id,nama)values(85,'Jumlah Dosen bergelar S3');
+insert into datadasar(id,nama)values(86,'jumlah dosen PNS dan NON-PNS yang mendapatkan jabatan fungsional pertama');
+insert into datadasar(id,nama)values(87,'jumlah dosen PNS dan NON-PNS yang belum punya jabatan fungsional');
+insert into datadasar(id,nama)values(88,'Jumlah Dosen yang Mengikuti Pelatihan atau Workshop');
+insert into datadasar(id,nama)values(89,'Jumlah Tenaga Kependidikan yang Mengikuti Pelatihan atau Workshop');
+insert into datadasar(id,nama)values(90,'Jumlah Tenaga Kependidikan');
+insert into datadasar(id,nama)values(91,'Rata-rata waktu dosen mendapatkan jabatan fungsional pertama');
+insert into datadasar(id,nama)values(92,'Terlaksananya Indeks Kualitas Lingkungan dan K3L lebih dari 2');
+insert into datadasar(id,nama)values(93,'Terlaksananya toilet bersih lebih dari 80% ');
+insert into datadasar(id,nama)values(94,'Terlaksananya program 3 R Sampah (Reduce, Reuse, Recycle)');
+insert into datadasar(id,nama)values(95,'Jumlah kegiatan pengabdian kepada masyarakat yang Diketuai Dosen Lab terkait');
+insert into datadasar(id,nama)values(96,'Jumlah Kerjasama dengan Industri yang diketuai Dosen dari Lab terkait');
+insert into datadasar(id,nama)values(97,'Nilai Kerjasama dengan Industri dengan kontrak atas nama ITS  (Rp juta)');
+insert into datadasar(id,nama)values(98,'Jumlah mahasiswa yang terlibat dalam pengabdian Dosen');
