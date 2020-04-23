@@ -1,6 +1,6 @@
 create table DataDasar(
-id int primary key identity(1,1),
-nama varchar(50),
+id int primary key,
+nama varchar(500),
 create_date datetime,
 last_update datetime,
 expired_date datetime
@@ -14,12 +14,18 @@ last_update datetime,
 expired_date datetime
 )
 
+create table Aspek(
+	id int identity(1,1) primary key,
+	aspek varchar(50),
+	komponen_aspek varchar(100)
+)
 create table MasterIndikator(
-id int primary key identity(1,1),
+id int primary key,
+id_aspek int,
 id_pembilang int,
 id_penyebut int,
-nama varchar(50),
-deskripsi varchar(50),
+nama varchar(100),
+deskripsi varchar(1000),
 default_bobot float,
 create_date datetime,
 last_update datetime,
@@ -27,7 +33,9 @@ expired_date datetime,
 constraint fk_pembilang foreign key(id_pembilang)
 	references DataDasar(id),
 constraint fk_penyebut foreign key(id_penyebut)
-	references DataDasar(id)
+	references DataDasar(id),
+constraint fk_aspek FOREIGN key(id_aspek)
+	references Aspek(id)
 )
 
 create table Periode(
