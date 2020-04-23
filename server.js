@@ -194,6 +194,18 @@ app.post("/api/DataDasar/", function(req, res)
   var query = 'insert into DataDasar ( nama, create_date, last_update, expired_date ) values( @nama, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
 })
+// Aspek
+app.post("/api/Aspek/", function(req, res)
+{
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'aspek', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'komponen_aspek', sqltype: sql.VarChar, value: req.body.komponen_aspek }     
+  ]
+
+  var query = 'insert into Aspek ( aspek, komponen_aspek ) values( @aspek, @komponen_aspek )';
+  executeQuery(res, query, model, 1)
+})
 // JenisSatker
 app.post("/api/JenisSatker/", function(req, res)
 {
@@ -341,6 +353,18 @@ app.put("/api/DataDasar/:id", function(req, res) {
   var query = 'update DataDasar set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
+// Aspek
+app.put("/api/Aspek/:id", function(req, res)
+{
+  var model = [
+    { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'aspek', sqltype: sql.VarChar, value: req.body.nama },
+    { name: 'komponen_aspek', sqltype: sql.VarChar, value: req.body.komponen_aspek }     
+  ]
+
+  var query = 'update Aspek set aspek=$aspek komponen_aspek=@komponen_aspek where id=@id';
+  executeQuery(res, query, model, 1)
+})
 // JenisSatker
 app.put("/api/JenisSatker/:id", function(req, res) {
   var model = [
@@ -442,14 +466,21 @@ app.put("/api/Indikator_SatuanKerja_Log/:id", function(req, res) {
 
 app.delete("/api/DataDasar/:id", function(req, res)
 {
-    var query = "delete * from DataDasar where id=" + req.params.id;
+    var query = "delete from DataDasar where id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
+// datadasar
+
+app.delete("/api/Aspek/:id", function(req, res)
+{
+    var query = "delete from Aspek where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
 // jenis satker
 
 app.delete("/api/JenisSatker/:id", function(req, res)
 {
-    var query = "delete  from JenisSatker where id=" + req.params.id;
+    var query = "delete from JenisSatker where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
 // master indikator
@@ -463,7 +494,7 @@ app.delete("/api/MasterIndikator/:id", function(req, res)
 
 app.delete("/api/Periode/:id", function(req, res)
 {
-    var query = "delete  from Periode where id=" + req.params.id;
+    var query = "delete from Periode where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
 // indikator periode
