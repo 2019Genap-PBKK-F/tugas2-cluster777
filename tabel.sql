@@ -1,5 +1,5 @@
 create table DataDasar(
-id int primary key,
+id int primary key identity(1,1),
 nama varchar(500),
 create_date datetime,
 last_update datetime,
@@ -20,7 +20,7 @@ create table Aspek(
 	komponen_aspek varchar(100)
 )
 create table MasterIndikator(
-id int primary key,
+id int primary key identity(1,1),
 id_aspek int,
 id_pembilang int,
 id_penyebut int,

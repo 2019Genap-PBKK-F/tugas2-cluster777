@@ -122,6 +122,18 @@ app.get("/api/Periode/:id", function(req, res)
     var query = "select * from Periode where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
+// masterindikator_full
+app.get("/api/masterindikator_full/", function(req, res)
+{
+    var query = "select MI.id, A.aspek, A.komponen_aspek,MI.nama as nama_indik,MI.deskripsi as deskripsi_indik, DD1.nama as pembilang, DD2.nama as penyebut, MI.default_bobot from MasterIndikator as MI inner join  Aspek as A on A.id=MI.id_aspek inner join  DataDasar as DD1 on DD1.id=MI.id_pembilang inner join  DataDasar as DD2 on DD2.id=id_penyebut"
+    executeQuery(res, query, null, 0);
+});
+
+app.get("/api/masterindikator_full/:id", function(req, res)
+{
+    var query = "select MI.id, A.aspek, A.komponen_aspek,MI.nama ,MI.deskripsi, DD1.nama as pembilang, DD2.nama as penyebut, MI.default_bobot from MasterIndikator as MI inner join  Aspek as A on A.id=MI.id_aspek inner join  DataDasar as DD1 on DD1.id=MI.id_pembilang inner join  DataDasar as DD2 on DD2.id=id_penyebut where MI.id=" + req.params.id;
+    executeQuery(res, query, null, 0);
+});
 // indikator periode
 app.get("/api/Indikator_Periode/", function(req, res)
 {
@@ -350,7 +362,7 @@ app.put("/api/DataDasar/:id", function(req, res) {
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
   ]
 
-  var query = 'update DataDasar set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
+  var query = 'update DataDasar set nama = @nama, last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Aspek
@@ -362,7 +374,7 @@ app.put("/api/Aspek/:id", function(req, res)
     { name: 'komponen_aspek', sqltype: sql.VarChar, value: req.body.komponen_aspek }     
   ]
 
-  var query = 'update Aspek set aspek=$aspek komponen_aspek=@komponen_aspek where id=@id';
+  var query = 'update Aspek set aspek=@aspek, komponen_aspek=@komponen_aspek where id=@id';
   executeQuery(res, query, model, 1)
 })
 // JenisSatker
@@ -379,6 +391,7 @@ app.put("/api/JenisSatker/:id", function(req, res) {
 app.put("/api/MasterIndikator/:id", function(req, res) {
   var model = [
     { name: 'id', sqltype: sql.Int, value: req.body.id },
+    { name: 'id_aspek', sqltype: sql.Int, value: req.body.id_pembilang },
     { name: 'id_pembilang', sqltype: sql.Int, value: req.body.id_pembilang },
     { name: 'id_penyebut', sqltype: sql.Int, value: req.body.id_penyebut },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
@@ -386,7 +399,7 @@ app.put("/api/MasterIndikator/:id", function(req, res) {
     { name: 'default_bobot', sqltype: sql.Int, value: req.body.default_bobot }
   ]
 
-  var query = 'update MasterIndikator set id_pembilang = @id_pembilang id_penyebut=@id_penyebut nama = @nama deskripsi=@deskripsi default_bobot=@default_bobot where id = @id';
+  var query = 'update MasterIndikator set id_aspek=@id_aspek ,id_pembilang = @id_pembilang, id_penyebut=@id_penyebut, nama = @nama, deskripsi=@deskripsi, default_bobot=@default_bobot, last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Periode
