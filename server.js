@@ -384,7 +384,7 @@ app.put("/api/JenisSatker/:id", function(req, res) {
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
   ]
 
-  var query = 'update JenisSatker set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
+  var query = 'update JenisSatker set nama = @nama, last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
 // MasterIndikator
@@ -409,7 +409,7 @@ app.put("/api/Periode/:id", function(req, res) {
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama }
   ]
 
-  var query = 'update Periode set nama = @nama last_update=CURRENT_TIMESTAMP where id = @id';
+  var query = 'update Periode set nama = @nama, last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Indikator_Periode
@@ -421,7 +421,7 @@ app.put("/api/Indikator_Periode/:id", function(req, res) {
     { name: 'bobot', sqltype: sql.Float, value: req.body.bobot} 
   ]
 
-  var query = 'update Indikator_Periode set id_master = @id_master id_periode=@id_periode bobot=@bobot where id = @id';
+  var query = 'update Indikator_Periode set id_master = @id_master, id_periode=@id_periode, bobot=@bobot where id = @id';
   executeQuery(res, query, model, 1)
 })
 // satker
@@ -434,7 +434,7 @@ app.put("/api/SatuanKerja/:id", function(req, res) {
     { name: 'email', sqltype: sql.VarChar, value: req.body.email} 
   ]
 
-  var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker id_induk_satker=@id_induk_satker nama=@nama email=@email last_update=CURRENT_TIMESTAMP where id = @id';
+  var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker, id_induk_satker=@id_induk_satker, nama=@nama, email=@email, last_update=CURRENT_TIMESTAMP where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Capaian_Unit
@@ -446,7 +446,7 @@ app.put("/api/Capaian_Unit/:id", function(req, res) {
     
   ]
 
-  var query = 'update Capaian_Unit set id_satker = @id_satker id_datadasar=@id_datadasar capaian=@capaian where id = @id';
+  var query = 'update Capaian_Unit set id_satker = @id_satker, id_datadasar=@id_datadasar, capaian=@capaian where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Indikator_SatuanKerja
@@ -461,7 +461,7 @@ app.put("/api/Indikator_SatuanKerja/:id", function(req, res) {
     
   ]
 
-  var query = 'update Indikator_SatuanKerja set id_indikator_periode = @id_indikator_periode id_satker=@id_satker bobot=@bobot target=@target capaian=@capaian where id = @id';
+  var query = 'update Indikator_SatuanKerja set id_indikator_periode = @id_indikator_periode, id_satker=@id_satker, bobot=@bobot, target=@target, capaian=@capaian where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Indikator_SatuanKerja_Log
@@ -471,7 +471,7 @@ app.put("/api/Indikator_SatuanKerja_Log/:id", function(req, res) {
     { name: 'capaian', sqltype: sql.Float, value: req.body.capaian}
   ]
 
-  var query = 'update Indikator_SatuanKerja_Log set id_indikator_periode = @id_indikator_periode id_satker=@id_satker bobot=@bobot target=@target capaian=@capaian where id = @id';
+  var query = 'update Indikator_SatuanKerja_Log set id_indikator_periode = @id_indikator_periode, id_satker=@id_satker, bobot=@bobot, target=@target, capaian=@capaian where id = @id';
   executeQuery(res, query, model, 1)
 })
 // DELETE FUNCTION

@@ -61,7 +61,7 @@ create table SatuanKerja(
 id varchar(32) primary key,
 id_ins_satker int,
 id_induk_satker varchar(32),
-nama varchar(50),
+nama varchar(1000),
 email varchar(50),
 create_date datetime,
 last_update datetime,
@@ -69,7 +69,7 @@ expired_date datetime,
 constraint fk_ins_satker foreign key(id_ins_satker)
 	references JenisSatker(id),
 constraint fk_induk_satker foreign key(id_induk_satker)
-	references SatuanKerja(id_satker)
+	references SatuanKerja(id)
 )
 
 create table Capaian_Unit(
@@ -78,7 +78,7 @@ id_datadasar int,
 waktu datetime,
 capaian float,
 constraint fk_satker foreign key(id_satker)
-	References SatuanKerja(id_satker) on delete cascade,
+	References SatuanKerja(id) on delete cascade,
 constraint fk_datadasar foreign key(id_datadasar)
 	References DataDasar(id) on delete cascade
 )
@@ -95,7 +95,7 @@ constraint fk_periode1 foreign key (id_indikator_periode)
 	references Indikator_Periode(id)
 	,
 constraint fk_satker1 foreign key (id_satker) 
-	references SatuanKerja(id_satker)
+	references SatuanKerja(id)
 	
 )
 
