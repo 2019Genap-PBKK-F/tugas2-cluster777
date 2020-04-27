@@ -58,8 +58,7 @@ constraint fk_periode foreign key(id_periode)
 
 )
 create table SatuanKerja(
-id int identity(1,1),
-id_satker as 'SK'+ RIGHT('00000000000000000000000000000' + CAST(ID AS varCHAR(30)), 30) PERSISTED primary key,
+id varchar(32) primary key,
 id_ins_satker int,
 id_induk_satker varchar(32),
 nama varchar(50),
