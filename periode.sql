@@ -1,0 +1,1 @@
+insert into periode(nama,create_date,last_update)values("2020",Getdate(),Getdate())
