@@ -435,7 +435,7 @@ app.put("/api/SatuanKerja/:id", function(req, res) {
     { name: 'level_unit', sqltype: sql.VarChar, value: req.body.email} 
   ]
 
-  var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker, id_induk_satker=@id_induk_satker, nama=@nama, email=@email, last_update=CURRENT_TIMESTAMP where id = @id';
+  var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker, id_induk_satker=@id_induk_satker, nama=@nama, email=@email, last_update=CURRENT_TIMESTAMP, level_unit=@level_unit where id = @id';
   executeQuery(res, query, model, 1)
 })
 // Capaian_Unit
