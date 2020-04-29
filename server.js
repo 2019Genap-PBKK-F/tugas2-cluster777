@@ -238,7 +238,7 @@ app.post("/api/MasterIndikator/", function( req, res)
     { name: 'id_penyebut', sqltype: sql.Int, value: req.body.id_penyebut },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama },
     { name: 'deskripsi', sqltype: sql.VarChar, value: req.body.deskripsi },
-    { name: 'default_bobot', sqltype: sql.Int, value: req.body.default_bobot },
+    { name: 'default_bobot', sqltype: sql.Int, value: req.body.default_bobot }
   ]
   var query = 'insert into MasterIndikator( id_pembilang, id_penyebut, nama, deskripsi, default_bobot, create_date, last_update, expired_date ) values( @id_pembilang, @id_penyebut, @nama, @deskripsi, @default_bobot, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP )';
   executeQuery(res, query, model, 1)
@@ -279,13 +279,13 @@ app.post("/api/SatuanKerja/", function(req, res)
     { name: 'id_ins_satker', sqltype: sql.Int, value: req.body.id_ins_satker },
     { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama},
-    { name: 'email', sqltype: sql.VarChar, value: req.body.email}
-    
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email},
+    { name: 'level_unit', sqltype: sql.VarChar, value: req.body.email}
   ]
 
   // console.log(req.body.waktu)
 
-  var query = 'insert into SatuanKerja( id_ins_satker, id_induk_satker, nama, email ) values( @id_ins_satker, @id_induk_satker, @nama, @email )';
+  var query = 'insert into SatuanKerja( id_ins_satker, id_induk_satker, nama, email,level_unit ) values( @id_ins_satker, @id_induk_satker, @nama, @email, @level_unit )';
   executeQuery(res, query, model, 1)
 })
 // Capaian_Unit
@@ -431,7 +431,8 @@ app.put("/api/SatuanKerja/:id", function(req, res) {
     { name: 'id_ins_satker', sqltype: sql.Int, value: req.body.id_ins_satker },
     { name: 'id_induk_satker', sqltype: sql.VarChar, value: req.body.id_induk_satker },
     { name: 'nama', sqltype: sql.VarChar, value: req.body.nama},
-    { name: 'email', sqltype: sql.VarChar, value: req.body.email} 
+    { name: 'email', sqltype: sql.VarChar, value: req.body.email},
+    { name: 'level_unit', sqltype: sql.VarChar, value: req.body.email} 
   ]
 
   var query = 'update SatuanKerja set id_ins_satker = @id_ins_satker, id_induk_satker=@id_induk_satker, nama=@nama, email=@email, last_update=CURRENT_TIMESTAMP where id = @id';
