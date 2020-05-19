@@ -239,7 +239,7 @@ app.get('/auth/login/', function(req, res)
     { name: 'username', sqltype: sql.VarChar, value: req.params.email },
 	{ name: 'password', sqltype: sql.VarChar, value: req.params.pass }
   ]
-  var query = 'select id, nama, email from SatuanKerja where email = @username and email=@password'
+  var query = 'select id, nama, email from SatuanKerja where email = "@username" and email="@password"'
 
   executeQuery(res, query, model, 1)
 })
