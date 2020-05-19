@@ -177,7 +177,7 @@ app.get("/api/SatuanKerja/", function(req, res)
 });
 app.get("/api/SatuanKerja/nama", function(req, res)
 {
-    var query = "select id,nama from SatuanKerja"
+    var query = "SELECT distinct SatuanKerja.id,SatuanKerja.nama from SatuanKerja inner join Indikator_SatuanKerja on SatuanKerja.id=Indikator_SatuanKerja.id_satker"
     executeQuery(res, query, null, 0);
 });
 app.get("/api/SatuanKerja/:id", function(req, res)
