@@ -236,7 +236,7 @@ app.get("/api/Indikator_SatuanKerja_Log/:id", function(req, res)
 app.get('/auth/login/', function(req, res)
 {
   var model = [
-    { name: 'email', sqltype: sql.VarChar, value: req.params.email }
+    { name: 'email', sqltype: sql.VarChar, value: req.params.email },
 	{ name: 'pass', sqltype: sql.VarChar, value: req.params.pass }
   ]
   var query = 'select id, nama, email from SatuanKerja where email = @email'
