@@ -3,9 +3,9 @@
 const express = require("express");
 const app = express();
 const sql = require('mssql')
-// hostname='127.0.0.1'
+hostname='127.0.0.1'
 const port = 8009;
-const hostname = '10.199.14.46';
+//const hostname = '10.199.14.46';
 
 
 //cors
@@ -39,6 +39,7 @@ var executeQuery = function(res, query, model, reqType) {
         model.forEach(function(m)
         {
           request.input(m.name, m.sqltype, m.value);
+          console.log(m)
         });
       }
       request.query(query, function(err, response){
@@ -48,7 +49,7 @@ var executeQuery = function(res, query, model, reqType) {
         else{
           // console.log(response.recordset)
           res.send(response.recordset)
-          
+          console.log(response.recordset)
         }
      })
     }
@@ -233,13 +234,12 @@ app.get("/api/Indikator_SatuanKerja_Log/:id", function(req, res)
     executeQuery(res, query, null, 0);
 });
 // auth
-app.get('/auth/login/', function(req, res)
+app.get('/auth/login/:email', function(req, res)
 {
   var model = [
-    { name: 'username', sqltype: sql.VarChar, value: req.params.email },
-	{ name: 'password', sqltype: sql.VarChar, value: req.params.pass }
+    { name: 'email', sqltype: sql.VarChar, value: req.params.email }
   ]
-  var query = 'select id, nama, email from SatuanKerja where email = "@username" and email="@password"'
+  var query = 'select id, nama, email from SatuanKerja where email = @email'
 
   executeQuery(res, query, model, 1)
 })
