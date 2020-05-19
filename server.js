@@ -232,6 +232,18 @@ app.get("/api/Indikator_SatuanKerja_Log/:id", function(req, res)
     var query = "select * from Indikator_SatuanKerja_Log where id=" + req.params.id;
     executeQuery(res, query, null, 0);
 });
+// auth
+app.get('/auth/login/', function(req, res)
+{
+  var model = [
+    { name: 'email', sqltype: sql.VarChar, value: req.params.email }
+	{ name: 'pass', sqltype: sql.VarChar, value: req.params.pass }
+  ]
+  var query = 'select id, nama, email from SatuanKerja where email = @email'
+
+  executeQuery(res, query, model, 1)
+})
+
 // POST FUNCTION
 // DataDasar
 app.post("/api/DataDasar/", function(req, res)
