@@ -203,11 +203,18 @@ app.get("/api/Indikator_SatuanKerja/", function(req, res)
     var query = "select * from Indikator_SatuanKerja"
     executeQuery(res, query, null, 0);
 });
-app.get("/api/Indikator_SatuanKerja_selective/:id", function(req, res)
+//konkin
+app.get("/api/konkin/:id", function(req, res)
 {
-    var query = "select * from Indikator_SatuanKerja where id_satker='"+req.params.id+"'";
+    var query = "SELECT a.aspek, a.komponen_aspek, mi.nama, isk.bobot,isk.capaian FROM aspek AS a inner JOIN MasterIndikator AS mi ON a.id=mi.id_aspek inner JOIN Indikator_SatuanKerja as isk ON isk.id_indikator_periode=mi.id where isk.id_satker='"+req.params.id+"'";
     executeQuery(res, query, null, 0);
 });
+app.get("/api/konkin/", function(req, res)
+{
+    var query = "SELECT a.aspek, a.komponen_aspek, mi.nama, isk.bobot,isk.capaian FROM aspek AS a inner JOIN MasterIndikator AS mi ON a.id=mi.id_aspek inner JOIN Indikator_SatuanKerja as isk ON isk.id_indikator_periode=mi.id";
+    executeQuery(res, query, null, 0);
+});
+
 app.get("/api/Indikator_SatuanKerja/:id", function(req, res)
 {
     var query = "select * from Indikator_SatuanKerja where id=" + req.params.id;
