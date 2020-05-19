@@ -236,10 +236,10 @@ app.get("/api/Indikator_SatuanKerja_Log/:id", function(req, res)
 app.get('/auth/login/', function(req, res)
 {
   var model = [
-    { name: 'email', sqltype: sql.VarChar, value: req.params.email },
-	{ name: 'pass', sqltype: sql.VarChar, value: req.params.pass }
+    { name: 'username', sqltype: sql.VarChar, value: req.params.email },
+	{ name: 'password', sqltype: sql.VarChar, value: req.params.pass }
   ]
-  var query = 'select id, nama, email from SatuanKerja where email = @email'
+  var query = 'select id, nama, email from SatuanKerja where email = @username and email=@password'
 
   executeQuery(res, query, model, 1)
 })
