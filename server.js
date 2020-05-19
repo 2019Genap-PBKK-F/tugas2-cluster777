@@ -175,7 +175,11 @@ app.get("/api/SatuanKerja/", function(req, res)
     var query = "select * from SatuanKerja"
     executeQuery(res, query, null, 0);
 });
-
+app.get("/api/SatuanKerja/nama", function(req, res)
+{
+    var query = "select id,nama from SatuanKerja"
+    executeQuery(res, query, null, 0);
+});
 app.get("/api/SatuanKerja/:id", function(req, res)
 {
     var query = "select * from SatuanKerja where id=" + req.params.id;
@@ -199,7 +203,11 @@ app.get("/api/Indikator_SatuanKerja/", function(req, res)
     var query = "select * from Indikator_SatuanKerja"
     executeQuery(res, query, null, 0);
 });
-
+app.get("/api/Indikator_SatuanKerja_selective/:id", function(req, res)
+{
+    var query = "select * from Indikator_SatuanKerja where id_satker="+req.params.id;
+    executeQuery(res, query, null, 0);
+});
 app.get("/api/Indikator_SatuanKerja/:id", function(req, res)
 {
     var query = "select * from Indikator_SatuanKerja where id=" + req.params.id;
