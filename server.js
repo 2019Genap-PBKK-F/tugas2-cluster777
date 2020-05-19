@@ -3,9 +3,9 @@
 const express = require("express");
 const app = express();
 const sql = require('mssql')
-hostname='127.0.0.1'
+//hostname='127.0.0.1'
 const port = 8009;
-//const hostname = '10.199.14.46';
+const hostname = '10.199.14.46';
 
 
 //cors
