@@ -183,7 +183,7 @@ app.get("/api/SatuanKerja/nama", function(req, res)
 });
 app.get("/api/SatuanKerja/:id", function(req, res)
 {
-    var query = "select * from SatuanKerja where id=" + req.params.id;
+    var query = "select * from SatuanKerja where id='" + req.params.id + "'";
     executeQuery(res, query, null, 0);
 });
 // Capaian_Unit
