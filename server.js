@@ -181,6 +181,11 @@ app.get("/api/SatuanKerja/nama", function(req, res)
     var query = "SELECT distinct SatuanKerja.id,SatuanKerja.nama from SatuanKerja inner join Indikator_SatuanKerja on SatuanKerja.id=Indikator_SatuanKerja.id_satker"
     executeQuery(res, query, null, 0);
 });
+app.get("/api/SatuanKerja/nama/:id", function(req, res)
+{
+    var query = "SELECT distinct sk1.id,sk1.nama from SatuanKerja as sk1 inner join Indikator_SatuanKerja on sk1.id=Indikator_SatuanKerja.id_satker WHERE sk1.id='" + req.params.id + "' OR sk1.id_induk_satker='" + req.params.id + "'"
+    executeQuery(res, query, null, 0);
+});
 app.get("/api/SatuanKerja/:id", function(req, res)
 {
     var query = "select * from SatuanKerja where id='" + req.params.id + "'";
@@ -215,7 +220,11 @@ app.get("/api/konkin/", function(req, res)
     var query = "SELECT a.aspek, a.komponen_aspek, mi.nama, isk.bobot,isk.capaian,isk.capaian as cap FROM aspek AS a inner JOIN MasterIndikator AS mi ON a.id=mi.id_aspek inner JOIN Indikator_SatuanKerja as isk ON isk.id_indikator_periode=mi.id";
     executeQuery(res, query, null, 0);
 });
-
+app.get("/api/konkin/special/:id", function(req, res)
+{
+    var query = "SELECT a.aspek, a.komponen_aspek, mi.nama, isk.bobot,isk.capaian,isk.capaian as cap FROM aspek AS a inner JOIN MasterIndikator AS mi ON a.id=mi.id_aspek inner JOIN Indikator_SatuanKerja as isk ON isk.id_indikator_periode=mi.id INNER JOIN SatuanKerja AS sk ON sk.id=isk.id_satker where isk.id_satker='"+req.params.id+"' OR sk.id_induk_satker='"+req.params.id+"'";
+    executeQuery(res, query, null, 0);
+});
 app.get("/api/Indikator_SatuanKerja/:id", function(req, res)
 {
     var query = "select * from Indikator_SatuanKerja where id=" + req.params.id;
